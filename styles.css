@@ -3,56 +3,34 @@
    Warm, Rustic & Artisanal Bakery Website
    ============================================ */
 
-/* ============================================
-   1. CSS VARIABLES & COLOR PALETTE
-   ============================================ */
 :root {
-  /* Primary Colors - Warm Bakery Tones */
-  --color-cream: #faf5f0;       /* Off-white, warm cream background */
-  --color-gold: #d4a574;        /* Warm gold accent */
-  --color-brown: #6b4423;       /* Deep brown for text & accents */
-  --color-tan: #c9a876;         /* Lighter tan/beige for secondary accents */
-  
-  /* Text Colors */
-  --color-text-dark: #2d1f15;   /* Very dark brown - primary text */
-  --color-text-light: #6b4423;  /* Medium brown - secondary text */
-  --color-text-muted: #8b6f47;  /* Muted brown - tertiary text */
-  
-  /* Background & Borders */
-  --color-bg-light: #fffcf8;    /* Light cream background */
-  --color-bg-section: #f5eee7;  /* Section background */
-  --color-border: #d4a574;      /* Gold for borders */
-  --color-border-light: #e8ddd0;/* Light border for subtlety */
-  
-  /* Typography */
-  --font-serif: 'Georgia', 'Garamond', serif;      /* Serif for headings */
-  --font-sans: 'Arial', 'Helvetica', sans-serif;   /* Sans-serif for body */
-  
-  /* Spacing Scale */
+  --color-cream: #faf5f0;
+  --color-gold: #d4a574;
+  --color-brown: #6b4423;
+  --color-tan: #c9a876;
+  --color-text-dark: #2d1f15;
+  --color-text-light: #6b4423;
+  --color-text-muted: #8b6f47;
+  --color-bg-light: #fffcf8;
+  --color-bg-section: #f5eee7;
+  --color-border: #d4a574;
+  --color-border-light: #e8ddd0;
+  --font-serif: Georgia, Garamond, serif;
+  --font-sans: Arial, Helvetica, sans-serif;
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
-  
-  /* Typography Sizes */
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.5rem;
   --font-size-2xl: 2rem;
   --font-size-3xl: 2.5rem;
-  
-  /* Line Heights */
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.6;
-  --line-height-relaxed: 1.8;
 }
 
-/* ============================================
-   2. GLOBAL STYLES & RESET
-   ============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -65,60 +43,20 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg-light);
+  background: linear-gradient(180deg, #fffaf6, #f8efe5);
   color: var(--color-text-dark);
-  line-height: var(--line-height-normal);
+  line-height: 1.6;
   font-size: var(--font-size-base);
 }
 
-/* ============================================
-   3. TYPOGRAPHY
-   ============================================ */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  color: var(--color-brown);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-md);
-  font-weight: normal;
-  letter-spacing: 0.5px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-h1 {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-lg);
-}
-
-h2 {
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-md);
-  border-bottom: 2px solid var(--color-gold);
-  padding-bottom: var(--spacing-sm);
-}
-
-h3 {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-sm);
-}
-
-p {
-  line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-md);
-  color: var(--color-text-light);
-}
-
-strong {
-  color: var(--color-brown);
-  font-weight: 600;
-}
-
-/* ============================================
-   4. LINKS & BUTTONS
-   ============================================ */
 a {
   color: var(--color-gold);
   text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: 500;
 }
 
 a:hover {
@@ -126,475 +64,419 @@ a:hover {
   text-decoration: underline;
 }
 
-button {
-  background-color: var(--color-gold);
-  color: white;
-  border: none;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  font-family: var(--font-sans);
-  font-size: var(--font-size-base);
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--color-brown);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
 }
 
-button:hover {
-  background-color: var(--color-brown);
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
 }
 
-/* ============================================
-   5. HEADER & NAVIGATION
-   ============================================ */
-header {
-  background-color: var(--color-cream);
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
   border-bottom: 2px solid var(--color-gold);
-  padding: var(--spacing-lg) var(--spacing-sm);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+strong {
+  color: var(--color-brown);
+}
+
+.container {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: rgba(250, 245, 240, 0.96);
+  border-bottom: 2px solid var(--color-gold);
   position: sticky;
   top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  z-index: 10;
 }
 
-header img {
-  max-width: 80px;
-  height: auto;
-  display: block;
-  margin-bottom: var(--spacing-sm);
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem 0;
 }
 
-header > p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-  margin-bottom: var(--spacing-md);
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+.brand-name,
+.brand-subtitle {
+  font-family: var(--font-serif);
+  color: var(--color-brown);
+  line-height: 1;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 1.3rem;
   font-style: italic;
+}
+
+.tagline {
+  font-style: italic;
+  color: var(--color-text-muted);
+  flex: 1;
+  min-width: 220px;
+  margin: 0;
 }
 
 nav {
   display: flex;
-  justify-content: flex-start;
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: var(--spacing-md);
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 nav a {
   color: var(--color-text-light);
-  font-weight: 500;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: 600;
+  padding: 0.4rem 0.6rem;
   border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
+nav a[aria-current="page"],
+nav a:hover {
   color: var(--color-brown);
-  border-bottom-color: var(--color-gold);
+  border-color: var(--color-gold);
+  text-decoration: none;
 }
 
-/* ============================================
-   6. MAIN CONTENT & SECTIONS
-   ============================================ */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--spacing-lg) var(--spacing-sm);
+.main-content {
+  padding: 2rem 0 3rem;
 }
 
-section {
-  margin-bottom: var(--spacing-2xl);
-  padding: var(--spacing-lg);
-  background-color: var(--color-bg-light);
-  border-radius: 8px;
-  border-left: 4px solid var(--color-gold);
+.hero-section,
+.about-hero,
+.contact-hero,
+.content-panel,
+.page-intro,
+.product-grid,
+.info-grid {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(212, 165, 116, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(62, 40, 25, 0.04);
 }
 
-section:nth-child(even) {
-  background-color: var(--color-bg-section);
+.hero-section,
+.about-hero,
+.contact-hero {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* ============================================
-   7. IMAGES & MEDIA
-   ============================================ */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-  margin-bottom: var(--spacing-md);
+.eyebrow {
+  display: inline-block;
+  background: rgba(212, 165, 116, 0.15);
+  color: var(--color-brown);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
 }
 
-figure {
-  margin: var(--spacing-lg) 0;
-  padding: var(--spacing-md);
-  background-color: var(--color-bg-section);
-  border-radius: 6px;
-  border: 1px solid var(--color-border-light);
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-figcaption {
-  font-size: var(--font-size-sm);
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--color-brown);
+  color: white;
+}
+
+.btn-secondary {
+  border: 2px solid var(--color-brown);
+  color: var(--color-brown);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.hero-image,
+.about-image,
+.contact-hero-image,
+.product-feature {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(107, 68, 35, 0.1);
+}
+
+.content-panel,
+.page-intro {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feature-figure {
+  margin-top: 1.5rem;
+}
+
+.feature-figure img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 0.75rem;
+}
+
+figure figcaption {
   color: var(--color-text-muted);
   font-style: italic;
-  margin-top: var(--spacing-sm);
-  line-height: var(--line-height-relaxed);
+  font-size: 0.95rem;
 }
 
-picture {
-  display: block;
+.featured-copy img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin-bottom: 1rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.plan-visit,
+.video-panel,
+.product-card {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(212, 165, 116, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(62, 40, 25, 0.04);
+}
+
+.plan-visit,
+.video-panel {
+  padding: 2rem;
 }
 
 video,
 audio {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-bottom: var(--spacing-md);
+  width: 100%;
+  border-radius: 12px;
 }
 
-/* ============================================
-   8. FORMS & INPUTS
-   ============================================ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.product-grid h2 {
+  grid-column: 1 / -1;
+}
+
+.product-card {
+  padding: 1.5rem;
+}
+
+.product-card h3 {
+  margin-bottom: 0.6rem;
+}
+
+.cta-text {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+.about-hero .story-copy {
+  align-self: center;
+}
+
+.contact-hero {
+  grid-template-columns: 1fr 1fr;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 fieldset {
   border: 1px solid var(--color-border-light);
-  border-radius: 6px;
-  padding: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-  background-color: rgba(212, 165, 116, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  background: rgba(250, 245, 240, 0.6);
 }
 
 legend {
   font-family: var(--font-serif);
   color: var(--color-brown);
-  font-size: var(--font-size-lg);
-  font-weight: bold;
-  padding: 0 var(--spacing-sm);
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
 }
 
 label {
   display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
   color: var(--color-text-dark);
-  font-weight: 500;
-  margin-bottom: var(--spacing-xs);
 }
 
 input,
 select,
 textarea {
   width: 100%;
-  padding: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
+  padding: 0.8rem 0.9rem;
+  border-radius: 10px;
   border: 1px solid var(--color-border-light);
-  border-radius: 4px;
-  font-family: var(--font-sans);
-  font-size: var(--font-size-base);
-  background-color: var(--color-cream);
+  background: #fffdfb;
+  font: inherit;
   color: var(--color-text-dark);
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
 }
 
 textarea {
-  resize: vertical;
   min-height: 120px;
+  resize: vertical;
 }
 
-/* ============================================
-   9. LISTS & ARTICLES
-   ============================================ */
-ul, ol {
-  margin-left: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
+button {
+  border: none;
+  background: var(--color-brown);
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-li {
-  margin-bottom: var(--spacing-sm);
-  color: var(--color-text-light);
-  line-height: var(--line-height-relaxed);
-}
-
-article {
-  margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-md);
-  background-color: var(--color-cream);
-  border-radius: 6px;
-  border: 1px solid var(--color-border-light);
-}
-
-article h3 {
-  color: var(--color-brown);
-  margin-top: 0;
-}
-
-address {
-  font-style: normal;
-  color: var(--color-text-light);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-md);
-}
-
-/* ============================================
-   10. FOOTER
-   ============================================ */
 footer {
-  background-color: var(--color-brown);
-  color: var(--color-cream);
-  padding: var(--spacing-lg) var(--spacing-sm);
-  text-align: center;
-  margin-top: var(--spacing-2xl);
-  border-top: 2px solid var(--color-gold);
+  background: var(--color-brown);
+  color: #fff;
+  padding: 2rem 0;
 }
 
-footer p {
-  color: var(--color-cream);
-  margin-bottom: var(--spacing-sm);
-  font-size: var(--font-size-sm);
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
+footer p,
 footer a {
-  color: var(--color-gold);
+  color: #fff;
+  margin: 0;
 }
 
-footer a:hover {
-  color: var(--color-tan);
-}
-
-/* ============================================
-   11. RESPONSIVE DESIGN - MOBILE FIRST
-   ============================================ */
-
-/* Small Mobile Devices (320px - 480px) */
-@media (max-width: 480px) {
-  :root {
-    --font-size-3xl: 1.75rem;
-    --font-size-2xl: 1.5rem;
-    --spacing-lg: 1.5rem;
-    --spacing-2xl: 2rem;
-  }
-
-  header {
-    padding: var(--spacing-md) var(--spacing-sm);
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  nav a {
-    display: block;
-    padding: var(--spacing-sm);
-  }
-
-  main {
-    padding: var(--spacing-md) var(--spacing-sm);
-  }
-
-  section {
-    padding: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-  }
-
-  h1 {
-    font-size: var(--font-size-2xl);
-  }
-
-  h2 {
-    font-size: var(--font-size-xl);
-  }
-
-  fieldset {
-    padding: var(--spacing-sm);
-  }
-
-  input,
-  select,
-  textarea {
-    font-size: 16px; /* Prevents zoom on iOS */
-  }
-}
-
-/* Medium Tablets (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  header {
-    padding: var(--spacing-md) var(--spacing-lg);
-  }
-
-  nav ul {
-    gap: var(--spacing-lg);
-  }
-
-  main {
-    padding: var(--spacing-lg);
-  }
-
-  section {
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-2xl);
-  }
-
-  article {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-md);
-    align-items: flex-start;
-  }
-
-  article h3 {
-    flex-basis: 100%;
-  }
-
-  article p {
-    flex: 1;
-    min-width: 200px;
-  }
-}
-
-/* Large Screens (769px and up) */
-@media (min-width: 769px) {
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-lg) var(--spacing-xl);
-  }
-
-  header > div:first-child {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-lg);
-  }
-
-  header > p {
-    margin-bottom: 0;
-    min-width: 200px;
-  }
-
-  nav {
-    flex: 1;
-  }
-
-  nav ul {
-    justify-content: flex-end;
-    gap: var(--spacing-xl);
-  }
-
-  main {
-    padding: var(--spacing-xl) var(--spacing-2xl);
-  }
-
-  section {
-    padding: var(--spacing-xl);
-    margin-bottom: var(--spacing-2xl);
-  }
-
-  /* Multi-column layouts for articles */
-  section > article {
-    display: inline-block;
-    width: calc(50% - var(--spacing-sm));
-    margin-right: var(--spacing-md);
-    vertical-align: top;
-  }
-
-  section > article:nth-child(even) {
-    margin-right: 0;
-  }
-
-  figure {
-    width: 70%;
-    margin: var(--spacing-lg) auto;
-  }
-}
-
-/* Extra Large Screens (1025px and up) */
-@media (min-width: 1025px) {
-  header {
-    padding: var(--spacing-lg) var(--spacing-2xl);
-  }
-
-  main {
-    max-width: 1400px;
-  }
-
-  section {
+@media (max-width: 768px) {
+  .header-inner,
+  .hero-section,
+  .about-hero,
+  .contact-hero,
+  .info-grid,
+  .product-grid {
+    grid-template-columns: 1fr;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
-    align-items: start;
   }
 
-  section > h2:first-child {
-    grid-column: 1 / -1;
+  .header-inner {
+    justify-content: center;
+    text-align: center;
   }
 
-  section > p:first-of-type {
-    grid-column: 1 / -1;
+  nav ul {
+    justify-content: center;
+  }
+
+  .tagline {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .hero-image,
+  .about-image,
+  .contact-hero-image,
+  .product-feature,
+  .feature-figure img {
+    height: 300px;
+  }
+
+  .footer-inner {
+    justify-content: center;
+    text-align: center;
   }
 }
 
-/* ============================================
-   12. UTILITY CLASSES
-   ============================================ */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-sm);
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-gold {
-  color: var(--color-gold);
-}
-
-.text-brown {
-  color: var(--color-brown);
-}
-
-.bg-cream {
-  background-color: var(--color-cream);
-}
-
-.bg-section {
-  background-color: var(--color-bg-section);
-}
-
-.mt-sm { margin-top: var(--spacing-sm); }
-.mt-md { margin-top: var(--spacing-md); }
-.mt-lg { margin-top: var(--spacing-lg); }
-
-.mb-sm { margin-bottom: var(--spacing-sm); }
-.mb-md { margin-bottom: var(--spacing-md); }
-.mb-lg { margin-bottom: var(--spacing-lg); }
-
-.p-sm { padding: var(--spacing-sm); }
-.p-md { padding: var(--spacing-md); }
-.p-lg { padding: var(--spacing-lg); }
-
-/* ============================================
-   13. PRINT STYLES
-   ============================================ */
-@media print {
-  header, footer {
-    page-break-inside: avoid;
+@media (max-width: 500px) {
+  .brand {
+    width: 100%;
+    justify-content: center;
   }
 
-  section {
-    page-break-inside: avoid;
-  }
-
-  a {
-    color: var(--color-brown);
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 }
