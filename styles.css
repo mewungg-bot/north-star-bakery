@@ -15,6 +15,8 @@
   --color-bg-section: #f5eee7;
   --color-border: #d4a574;
   --color-border-light: #e8ddd0;
+  --color-error: #b2443d;
+  --color-success: #2f6e45;
   --font-serif: Georgia, Garamond, serif;
   --font-sans: Arial, Helvetica, sans-serif;
   --spacing-xs: 0.5rem;
@@ -395,9 +397,42 @@ textarea {
   color: var(--color-text-dark);
 }
 
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(178, 68, 61, 0.09);
+}
+
 textarea {
   min-height: 120px;
   resize: vertical;
+}
+
+.error-message {
+  min-height: 1.2rem;
+  font-size: 0.85rem;
+  color: var(--color-error);
+  margin-top: 0.35rem;
+}
+
+.form-status-row {
+  min-height: 2.5rem;
+}
+
+.save-status,
+.success-message {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.save-status {
+  color: var(--color-brown);
+}
+
+.success-message {
+  color: var(--color-success);
+  font-weight: 700;
 }
 
 button {

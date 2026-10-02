@@ -69,18 +69,20 @@
         <div class="content-panel">
           <h2 id="request">Inquiry and pre-order request</h2>
 
-          <form action="#" method="post">
+          <form id="contact-form" novalidate>
             <fieldset>
               <legend>Your contact information</legend>
 
               <p>
                 <label for="name">Name (required)</label>
-                <input type="text" id="name" name="name" required autocomplete="name" />
+                <input type="text" id="name" name="name" data-field="name" required autocomplete="name" />
+                <div class="error-message" id="error-name" aria-live="polite"></div>
               </p>
 
               <p>
                 <label for="email">Email (required)</label>
-                <input type="email" id="email" name="email" required autocomplete="email" />
+                <input type="email" id="email" name="email" data-field="email" required autocomplete="email" />
+                <div class="error-message" id="error-email" aria-live="polite"></div>
               </p>
             </fieldset>
 
@@ -89,22 +91,25 @@
 
               <p>
                 <label for="pickup-date">Preferred pickup date (required)</label>
-                <input type="date" id="pickup-date" name="pickup-date" required />
+                <input type="date" id="pickup-date" name="pickup-date" data-field="pickupDate" required />
+                <div class="error-message" id="error-pickupDate" aria-live="polite"></div>
               </p>
 
               <p>
                 <label for="request-type">Request type (required)</label>
-                <select id="request-type" name="request-type" required>
+                <select id="request-type" name="request-type" data-field="requestType" required>
                   <option value="">Choose one</option>
                   <option value="pre-order">Pre-order</option>
                   <option value="general-question">General question</option>
                   <option value="event-order">Event or catering order</option>
                 </select>
+                <div class="error-message" id="error-requestType" aria-live="polite"></div>
               </p>
 
               <p>
                 <label for="item-details">Item details (required)</label>
-                <textarea id="item-details" name="item-details" rows="6" required placeholder="Tell us what you would like, including quantities or serving count."></textarea>
+                <textarea id="item-details" name="item-details" data-field="details" rows="6" required placeholder="Tell us what you would like, including quantities or serving count."></textarea>
+                <div class="error-message" id="error-details" aria-live="polite"></div>
               </p>
 
               <p>
@@ -112,6 +117,11 @@
                 <textarea id="allergy-notes" name="allergy-notes" rows="4" placeholder="Please list allergies or ingredient questions."></textarea>
               </p>
             </fieldset>
+
+            <div class="form-status-row">
+              <p id="save-status" class="save-status" aria-live="polite"></p>
+              <p id="success-message" class="success-message" aria-live="polite"></p>
+            </div>
 
             <p>
               <button type="submit">Send request</button>
@@ -127,5 +137,7 @@
         <p><a href="index.html">Return to the bakery home page</a></p>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
